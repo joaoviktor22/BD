@@ -1321,6 +1321,7 @@ def menu():
           c.execute(sql)
           for x in c:
             print(x)
+          print(coluna)
           valor = input("Qual Codigo do Hospital que quer mudar?")
           valornovo = input("Insira o novo dado.")
           if (tipo == 3):
@@ -1330,8 +1331,8 @@ def menu():
               c.execute(sql, (valornovo, valor,))
           elif (tipo == 4):
             valornovo = float(valornovo)
-            if (coluna == 'Orcamento'):
-              sql = "UPDATE Hospital SET Orcamento = (%s) Where Codigo = (%s)"
+            if (coluna == 'Orçamento'):
+              sql = "UPDATE Hospital SET Orçamento = (%s) Where Codigo = (%s)"
               c.execute(sql, (valornovo, valor,))
           elif (tipo == 253):
             if (coluna == 'Nome'):
@@ -1340,8 +1341,8 @@ def menu():
             if (coluna == 'Natureza'):
               sql = "UPDATE Hospital SET Natureza = (%s) Where Codigo = (%s)"
               c.execute(sql, (valornovo, valor,))
-            if (coluna == 'Endereco'):
-              sql = "UPDATE Hospital SET Endereco = (%s) Where Codigo = (%s)"
+            if (coluna == 'Endereço'):
+              sql = "UPDATE Hospital SET Endereço = (%s) Where Codigo = (%s)"
               c.execute(sql, (valornovo, valor,))
           conn.commit()
           c.close()
@@ -1475,8 +1476,8 @@ def menu():
             if (coluna == 'Email'):
               sql = "UPDATE Pacientes SET Email = (%s) Where CPF = (%s)"
               c.execute(sql, (valornovo, valor,))
-            if (coluna == 'Endereco'):
-              sql = "UPDATE Pacientes SET Endereco = (%s) Where CPF = (%s)"
+            if (coluna == 'Endereço'):
+              sql = "UPDATE Pacientes SET Endereço = (%s) Where CPF = (%s)"
               c.execute(sql, (valornovo, valor,))
           conn.commit()
           c.close()
